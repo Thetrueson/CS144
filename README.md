@@ -86,7 +86,7 @@ CS144-fall2020 lab反馈
       221 Bye
       Connection closed by foreign host.
 
-    作业的话和操作差不多只是改了个邮箱地址，这里就不演示了
+  作业的话和操作差不多只是改了个邮箱地址，这里就不演示了
 
 
 
