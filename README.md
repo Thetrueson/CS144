@@ -7,6 +7,7 @@ CS144-fall2020 lab反馈
   安装VMWare pro 在官网下载Ubantu 18.04（因为lab中有提到这个版本）
   如果有不懂的地方可以在b站上通过视频一步步下载
   然后进入ubantu后
+  
       执行命令：
       apt-get install g++ git clang-tidy clang-format libpcap-dev \
         iptables mininet tcpdump telnet wireshark socat \
