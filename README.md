@@ -22,11 +22,13 @@ CS144-fall2020 lab反馈
 2_1.获取网页：
     通过浏览器输入 http://cs144.keithw.org/hello 来访问会得到一个结果（具体结果可以自行实验）
     这里比较简单，可以一步一步跟着lab走，很容易得到结果
-    telnet cs144.keithw.org http（用telnet工具 跟上域名 最后是协议）
-    GET /hello HTTP/1.1（请求方式 请求路径 协议）
-    Host: cs144.keithw.org（请求域名）
-    Connection: close
-    再回车（敲完之后一定要再进行这个回车才会返回结果，告诉服务器本次连接结束返回结果）
+    
+        telnet cs144.keithw.org http（用telnet工具 跟上域名 最后是协议）
+        GET /hello HTTP/1.1（请求方式 请求路径 协议）
+        Host: cs144.keithw.org（请求域名）
+        Connection: close
+        再回车（敲完之后一定要再进行这个回车才会返回结果，告诉服务器本次连接结束返回结果）
+    
     就可以得到网页一模一样的内容
 
     作业：
