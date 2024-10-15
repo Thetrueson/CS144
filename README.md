@@ -4,7 +4,7 @@ CS144-fall2020 lab反馈
 
 # Lab 0
 1.环境搭建：
-  安装VMWare pro 在官网下载Ubantu 18.04（因为lab中有提到这个版本）
+  安装VMware pro 在官网下载Ubantu 18.04（因为lab中有提到这个版本）
   如果有不懂的地方可以在b站上通过视频一步步下载
   然后进入ubantu后
   
@@ -50,9 +50,12 @@ CS144-fall2020 lab反馈
 2_2.发送电子邮件：
     这里因为没有stanford的id，我通过查找资料使用了网易163邮箱进行了实验
     ![image](https://github.com/user-attachments/assets/05fdff8d-ca72-470b-82fc-1e6aa5c9682a)
-    通过这里把smtp协议设置为许可状态
+    
+      通过这里把smtp协议设置为许可状态
+    
     ![image](https://github.com/user-attachments/assets/4e780c47-c224-4e08-810c-0c9c08dafe7a)
-    这里会获得一个密钥，一定一定要保存，在后面有用！！！
+    
+      这里会获得一个密钥，一定一定要保存，在后面有用！！！
     
     过程：
       telnet smtp.163.com smtp（域名是官方提供的，用来专为163邮箱使用的smtp服务器，lab中则是stanford的服务器）
