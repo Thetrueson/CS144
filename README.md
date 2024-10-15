@@ -6,12 +6,13 @@ CS144-fall2020 lab反馈
 1.环境搭建：
   安装VMWare pro 在官网下载Ubantu 18.04（因为lab中有提到这个版本）
   如果有不懂的地方可以在b站上通过视频一步步下载
-  然后进入ubantu后执行命令：
-    apt-get install g++ git clang-tidy clang-format libpcap-dev \
-      iptables mininet tcpdump telnet wireshark socat \
-      netcat-openbsd doxygen graphvizclang-format libpcap-dev \ 
-      iptables mininet tcpdump telnet wireshark socat netcat-openbsd \ 
-      doxygen graphviz
+  然后进入ubantu后
+      执行命令：
+      apt-get install g++ git clang-tidy clang-format libpcap-dev \
+        iptables mininet tcpdump telnet wireshark socat \
+        netcat-openbsd doxygen graphvizclang-format libpcap-dev \ 
+        iptables mininet tcpdump telnet wireshark socat netcat-openbsd \ 
+        doxygen graphviz
   安装lab所需的所需的所有环境就可以愉快的开始了
   这个step和lab上写的不一样，我也是参照了一些博主的做法，觉得这样会比lab中写的更加简单一些
   如果有自己的想法或者想按照lab一步一步来的也可以按自己想法来，反正殊途同归嘛
@@ -45,6 +46,42 @@ CS144-fall2020 lab反馈
 2_2.发送电子邮件：
     这里因为没有stanford的id，我通过查找资料使用了网易163邮箱进行了实验
     ![image](https://github.com/user-attachments/assets/05fdff8d-ca72-470b-82fc-1e6aa5c9682a)
+    通过这里把smtp协议设置为许可状态
+    ![image](https://github.com/user-attachments/assets/4e780c47-c224-4e08-810c-0c9c08dafe7a)
+    这里会获得一个密钥，一定一定要保存，在后面有用！！！
+    过程：
+      telnet smtp.163.com smtp（域名是官方提供的，用来专为163邮箱使用的smtp服务器，lab中则是stanford的服务器）
+      Trying 117.135.214.13...
+      Connected to smtp163.mail.ntes53.netease.com.
+      Escape character is '^]'.
+      220 163.com Anti-spam GT for Coremail System (163com[20141201])
+      HELO mycomputer.163.com（HELO后面的域名随意，用来标识自己的主机）
+      250 OK
+      AUTH LOGIN（登录命令）
+      334 dXNlcm5hbWU6
+      （输入163邮箱经过base64编码过后的形式）
+      334 UGFzc3dvcmQ6
+      （输入当初给的密钥经过base64编码过后的形式）
+      235 Authentication successful（这里表示成功登录）
+      MAIL FROM:<~>（163邮箱，发送方）
+      250 Mail OK
+      RCPT TO:<~>（163邮箱，接受方）
+      250 Mail OK
+      DATA（输入邮件的命令）
+      354 End data with <CR><LF>.<CR><LF>
+      【以下为邮箱内容】
+      From:~
+      To:~
+      SUbject:TEst email via telnet
+      （换行）
+      hello cs144（正文）
+      .（以单行.为结束符）
+      250 Mail OK queued as gzga-smtp-mtada-g0-2,_____wBnVacbPw5nKdjHBA--.60317S5 1728987167
+      QUIT
+      221 Bye
+      Connection closed by foreign host.
+
+    作业的话和操作差不多只是改了个邮箱地址，这里就不演示了
 
 
 
