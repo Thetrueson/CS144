@@ -53,7 +53,7 @@ CS144-fall2020 lab反馈
     
       通过这里把smtp协议设置为许可状态
     
-    ![image](https://github.com/user-attachments/assets/4e780c47-c224-4e08-810c-0c9c08dafe7a)
+  ![image](https://github.com/user-attachments/assets/4e780c47-c224-4e08-810c-0c9c08dafe7a)
     
       这里会获得一个密钥，一定一定要保存，在后面有用！！！
     
