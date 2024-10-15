@@ -14,6 +14,7 @@ CS144-fall2020 lab反馈
         netcat-openbsd doxygen graphvizclang-format libpcap-dev \ 
         iptables mininet tcpdump telnet wireshark socat netcat-openbsd \ 
         doxygen graphviz
+        
   安装lab所需的所需的所有环境就可以愉快的开始了
   这个step和lab上写的不一样，我也是参照了一些博主的做法，觉得这样会比lab中写的更加简单一些
   如果有自己的想法或者想按照lab一步一步来的也可以按自己想法来，反正殊途同归嘛
@@ -30,6 +31,7 @@ CS144-fall2020 lab反馈
 
     作业：
       比较简单，把请求路径更改成/lab0/~，波浪线处可以是任何字符，本人用的自己学号进行测试得出了结果
+      
         HTTP/1.1 200 OK
         Date: Tue, 15 Oct 2024 08:03:57 GMT
         Server: Apache
@@ -42,6 +44,7 @@ CS144-fall2020 lab反馈
         
         Hello! You told us that your SUNet ID was "~". Please see the HTTP headers (above) for your secret code.
         Connection closed by foreign host.
+        
       除了波浪线其他都是返回的结果，有需要的可以参考一下
 
 2_2.发送电子邮件：
@@ -50,6 +53,7 @@ CS144-fall2020 lab反馈
     通过这里把smtp协议设置为许可状态
     ![image](https://github.com/user-attachments/assets/4e780c47-c224-4e08-810c-0c9c08dafe7a)
     这里会获得一个密钥，一定一定要保存，在后面有用！！！
+    
     过程：
       telnet smtp.163.com smtp（域名是官方提供的，用来专为163邮箱使用的smtp服务器，lab中则是stanford的服务器）
       Trying 117.135.214.13...
