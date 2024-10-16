@@ -9,11 +9,7 @@ CS144-fall2020 lab反馈
   然后进入ubantu后
   
       执行命令：
-      apt-get install g++ git clang-tidy clang-format libpcap-dev \
-        iptables mininet tcpdump telnet wireshark socat \
-        netcat-openbsd doxygen graphvizclang-format libpcap-dev \ 
-        iptables mininet tcpdump telnet wireshark socat netcat-openbsd \ 
-        doxygen graphviz
+      apt-get install g++ git clang-tidy clang-format libpcap-dev iptables mininet tcpdump telnet wireshark socat netcat-openbsd doxygen graphviz
         
   安装lab所需的所需的所有环境就可以愉快的开始了
   这个step和lab上写的不一样，我也是参照了一些博主的做法，觉得这样会比lab中写的更加简单一些
