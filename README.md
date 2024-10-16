@@ -104,6 +104,54 @@ CS144_lab反馈
     所以我又去重装了23.10版的ubantu，然后把前面的步骤再做一遍就可以继续做lab了~
     这里跟着step操作即可没有特别要注意的东西
 
+3_2.c++风格：
+    这里就是强调一些编码要点，还有一些注意事项
+
+3_3.阅读文档：
+    这里因为我找不到文档，所以就没看，我直接啃的源码，很难受qwq
+
+3_4.编写webget
+    这里需要知道封装库中有哪些函数可以使用，然后结合前面做的几个小step来实现代码，总体来说思路不难，难的是不知道要调用什么函数，需要看源码，了解清楚类的关系和具体的函数
+
+      TCPSocket client_socket;
+      Address server_address(host,"http");
+      client_socket.connect(server_address);
+      cout << "Connected to server" << endl;
+      string request = "GET "+path+" HTTP/1.1\r\nHost: "+host+"\r\nConnection: Close\r\n\r\n";
+      client_socket.write(request);
+      client_socket.shutdown(SHUT_WR);
+      cout << "Request sent" << endl;
+      string response;
+      cout << "Response received: " << endl;
+      while(!client_socket.eof()){
+    	client_socket.read(response);
+    	cout << response;
+      }
+      client_socket.close();
+
+    这是我代码的主要逻辑，这里request就用到了我们前面step中学到的知识
+    我运行代码是可以得到结果的，但是test过不去不知道为什么，但是我看其他博主的代码好像差不多就也没去多管了
+
+      这是我的测试结果：
+        Connected to server
+        Request sent
+        Response received: 
+        HTTP/1.1 200 OK
+        Date: Wed, 16 Oct 2024 13:00:54 GMT
+        Server: Apache
+        Last-Modified: Thu, 13 Dec 2018 15:45:29 GMT
+        ETag: "e-57ce93446cb64"
+        Accept-Ranges: bytes
+        Content-Length: 14
+        Connection: close
+        Content-Type: text/plain
+        
+        Hello, CS144!
+
+4.可靠字节流传输：
+  
+
+
 
 
 
