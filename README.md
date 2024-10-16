@@ -4,7 +4,7 @@ CS144-fall2020 lab反馈
 
 # Lab 0
 1.环境搭建：
-  安装VMware pro 在官网下载Ubantu 18.04（因为lab中有提到这个版本）
+  安装VMware pro 在官网下载Ubantu 18.04（因为lab中有提到这个版本）【这里是后期，建议23.10版本，具体原因见后qwq】
   如果有不懂的地方可以在b站上通过视频一步步下载
   然后进入ubantu后
   
