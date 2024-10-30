@@ -196,8 +196,42 @@ CS144_lab反馈
 
 
 # Lab2
+这个lab的难度比上一个低，但是lab说明书依旧很模糊，RST和未收到SYN就丢弃这些特性都是通过面向test编程得出的结果；
+这个实验分两个部分，第一个是32位和64位互转的方法，这个是后面接收端实现的基础，第二个是接收端receive和send方法的实现；
+具体的消息体结构和序号类别在lab中都有一定的说明，这里就不再赘述，下面我来说下要注意的点：
+
+    wrap和unwrap：这里面要注意的就是checkpoint，这个数不是具体的数，也可能比转换后的数大或者小，所以这里的比较范围要稍微宽一点
+                  在receive中的checkpoint可以给个大概，和ackno差不多就行，因为32位他可能会有几个轮次的交替，所以误差很小
+
+    receive：这里面的一些信息全靠test去理解qwq，第一个seqno，这是个32位的数，以字节为单位，而且SYN和FIN都占一个单位
+             SYN和FIN可能会同时出现也可能倒着出现，他们的payload可能会有可能没有，没有收到SYN之前，所有的消息全部丢弃
+             reassembler发送的index是以字节为单位，所以要考虑有数据的时候seqno.unwrap（）-1
+             window_size直接用UINT16_MAX和available_capability的最小值就行
+             这里让我最难受的是ackno的记录，我刚开始并没有想到用之前实现过的类方法去解决这个问题
+             我是用一个集合去记录出现过的数，然后再筛选，这样我再recorder_more这个测试集中超时了
+             所以我在网上看一下大佬们的博客，发现可以直接用is_start+btyes_pushed+is_closed直接秒了
+             我当初人都傻了，不过能学到东西就行qwq，还是得多考虑使用之前的东西
+
+    send：这个没什么可说的，如果收到了SYN就封装上述的ackno，window_size直接一个式子就解决了
+          这可能要注意的就是RST这个状态，如果有就直接置错然后返回，具体的做法我也是参考大佬的，因为这里说明书并没有给出
+          //在receive中，RST_是一个bool类型
+          if ( message.RST ) {
+            reassembler_.reader().set_error();
+            RST_ = reassembler_.reader().has_error();
+            return;
+          } else if ( RST_ ) {
+            return;
+          }
+          //在send中
+          message.RST = reassembler_.reader().has_error();
 
 
+除了next这个问题，其他的部分我感觉还行，不是很难，一些细节部分需要自己把控好，代码已通过测试，我也已经发出来了（但是效率可能不是很高），供大家参考
+
+————————————————————Lab2结束——————————————————
+
+
+# Lab3
 
 
       
